@@ -1,0 +1,39 @@
+This C++ code solves the N-Queens problem using a backtracking algorithm. Here are the key points of the code:
+
+1. The code includes necessary C++ libraries.
+
+2. It defines a function `isSafe` that checks if it's safe to place a queen at a given position `(x, y)` on the chessboard.
+
+3. The `printBoard` function displays the chessboard with queens represented as "[Q]" and empty cells as "[]".
+
+4. The `nQueen` function uses recursive backtracking to find all possible solutions to the N-Queens problem. It places queens on the board and ensures they don't attack each other, then recursively explores all possibilities.
+
+5. In the `main` function, the user inputs the value of `n`, which represents the size of the chessboard and the number of queens to be placed.
+
+6. It dynamically allocates memory for a 2D array `arr` to represent the chessboard.
+
+7. It calls the `nQueen` function to find and print all possible solutions to the N-Queens problem.
+
+8. After finding and printing all solutions, it displays the message "--------All possible solutions--------."
+
+9. The code analyzes its time complexity as O(N!) and auxiliary space complexity as O(N^2).
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+The time and space complexity of the N-Queens problem-solving algorithm in the provided code can be analyzed as follows:
+
+1. Time Complexity:
+   - The primary time complexity of the algorithm is driven by the backtracking process to find all possible solutions.
+   - In the worst case, the algorithm explores all possible combinations to place N queens on the N×N chessboard.
+   - This results in a time complexity of O(N!), as there are N possibilities for the first queen, (N-1) for the second, (N-2) for the third, and so on.
+   - In practice, the algorithm may terminate early if it finds a solution and backtracks in the process, making the actual running time faster for many cases.
+
+2. Space Complexity:
+   - The primary space complexity is determined by the memory used for the chessboard representation.
+   - The code dynamically allocates memory for a 2D array `arr` of size N×N to represent the chessboard.
+   - This results in a space complexity of O(N^2) because you're using an N×N array to represent the chessboard.
+   - Additional space complexity comes from the recursive call stack during the backtracking process, but it's generally much smaller than the chessboard representation.
+
+In summary, the time complexity of this code is O(N!) in the worst case, and the space complexity is O(N^2) due to the 2D array used to represent the chessboard. The actual performance may vary depending on the specific input and how early the algorithm terminates when a solution is found.

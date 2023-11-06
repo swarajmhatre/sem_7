@@ -1,0 +1,51 @@
+This code solves a fractional knapsack problem, where you have a set of items with given weights and values, and you want to maximize the value of items you can fit into a knapsack with a given capacity. Here are the main points about the code:
+
+1. It includes the necessary header file `bits/stdc++.h` and the standard namespace.
+
+2. Defines a comparison function `compare` to sort items in descending order of value-to-weight ratio (v1/w1 > v2/w2), where `v1` and `v2` are the values of two items, and `w1` and `w2` are their respective weights.
+
+3. Reads the number of items `n` from the user.
+
+4. Creates a vector of pairs, `a`, to store the value and weight of each item. Reads the value and weight of each item from the user.
+
+5. Reads the knapsack capacity `w` from the user.
+
+6. Sorts the items in descending order based on their value-to-weight ratio using the `compare` function.
+
+7. Initializes a variable `ans` to keep track of the maximum total value that can be obtained.
+
+8. Iterates through the sorted items and adds items to the knapsack while considering their weights and values. If there's enough capacity to add the entire item, it adds the full value and reduces the available capacity. If not, it calculates the fraction of the item that can be added and adds its fractional value.
+
+9. Prints the maximum total value `ans` that can be obtained from the knapsack.
+
+In summary, this code implements a greedy algorithm to solve the fractional knapsack problem and find the maximum value that can be achieved given a set of items with values and weights and a knapsack capacity.
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Let's analyze the space and time complexity of the provided code:
+
+1. Space Complexity:
+   - The space complexity is primarily determined by the data structures used in the code.
+   - `vector<pair<int,int>> a(n)`: This creates a vector of pairs to store the value and weight of each item. The space required for this vector is O(n) since it contains n elements.
+   - Other than the input and some constant space variables, there are no additional significant data structures.
+   - Overall space complexity is O(n) due to the vector.
+
+2. Time Complexity:
+   - The time complexity is mainly affected by the following sections of the code:
+
+   a. Reading input:
+      - Reading the number of items, value, weight, and knapsack capacity all have a time complexity of O(1).
+
+   b. Sorting items:
+      - Sorting the items is done using the `sort` function with a custom comparison function. The time complexity of this sorting operation is O(n * log(n)), where n is the number of items.
+
+   c. Iterating through the sorted items:
+      - The for loop that iterates through the sorted items runs in O(n) time since it goes through each item once.
+      - Inside the loop, there are basic arithmetic operations and conditional checks, which are O(1) operations.
+
+   - Overall, the time complexity of this code is dominated by the sorting step, making it O(n * log(n)).
+
+In summary, the space complexity of the code is O(n) due to the storage of items in a vector, and the time complexity is O(n * log(n)) due to the sorting operation.

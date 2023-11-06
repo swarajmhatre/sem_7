@@ -1,0 +1,44 @@
+This code is for solving the 0/1 Knapsack problem, a classic dynamic programming problem. Here's a simple and short explanation of the code:
+
+1. Import the necessary C++ library, iostream.
+
+2. Define the main function.
+
+3. Initialize variables: 
+   - `capacity` represents the maximum weight the knapsack can hold (in this case, 10).
+   - `items` is the number of items to choose from (in this case, 4).
+   - `price` is an array representing the values of items.
+   - `wt` is an array representing the weights of items.
+   - `dp` is a 2D array to store the results of subproblems.
+
+4. Use nested loops to fill in the `dp` array with the maximum profit achievable for different combinations of items and weight capacities.
+
+5. Inside the loops:
+   - If there are no items to add (i == 0) or no capacity (j == 0), set `dp[i][j]` to 0.
+   - If the weight of the current item (`wt[i]`) is less than or equal to the current capacity (`j`), choose the maximum of the previous maximum profit or the value of the current item plus the maximum profit with the remaining weight capacity.
+   - Otherwise, add the previously added item's profit to the knapsack.
+
+6. Output the maximum profit earned, which is stored in `dp[items][capacity]`.
+
+7. The code comments explain the time complexity (O(N*W)) and auxiliary space complexity (O(N*W)) of the algorithm.
+
+In summary, this code finds the maximum profit that can be earned by selecting items with given weights and values, subject to a maximum weight capacity using dynamic programming.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+The time and space complexity of this code, which is solving the 0/1 Knapsack problem using dynamic programming, can be analyzed as follows:
+
+Time Complexity:
+- The code uses two nested loops to fill in the `dp` array, iterating over the number of items and different weight capacities from 0 to the maximum capacity (`items` and `capacity`).
+- For each combination of item and capacity, the code performs constant-time operations.
+- Therefore, the time complexity is O(N * W), where 'N' is the number of items, and 'W' is the maximum capacity of the knapsack.
+
+Space Complexity:
+- The primary space-consuming data structure in this code is the `dp` array, which is a 2D array of size (items + 1) x (capacity + 1). This array is used to store the results of subproblems.
+- The space complexity is directly proportional to the size of this array.
+- Therefore, the space complexity is O(N * W), where 'N' is the number of items, and 'W' is the maximum capacity of the knapsack.
+
+In summary, the time and space complexity of the 0/1 Knapsack problem solution in this code is O(N * W), where 'N' is the number of items, and 'W' is the maximum capacity of the knapsack. This is a classic example of dynamic programming where the time and space complexities are determined by the number of items and the knapsack's capacity.
+
+
